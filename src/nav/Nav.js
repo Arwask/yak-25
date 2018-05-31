@@ -50,9 +50,9 @@ class Nav extends Component {
                 </form>
               </li>
               <li>
-                <button type="button" className="btn btn-primary">
+                <Link className="nav-link" to="/settings">
                   Settings
-                </button>
+                </Link>
               </li>
               <li>
                 <button type="button" className="btn btn-primary">
