@@ -12,7 +12,7 @@ import Profile from './profile/Profile';
 
 ReactDOM.render(
   <Router>
-    <div>
+    <div className="dashboard__body">
       <NavBar />
       <Route exact path="/" component={Dashboard} />
       <Route exact path="/settings" component={Settings} />
