@@ -14,10 +14,10 @@ class Dashboard extends Component {
         <h1>Welcome to Yak!</h1>
         <div className="container">
           <div className="row">
-            <div className=".col-6 .col-sm-4">
+            <div className="col-1">
               <button type="button" className="btn btn-primary">Log In</button>
             </div>
-            <div className=".col-6 .col-sm-4">
+            <div className="col-6">
               <button type="button" className="btn btn-primary" data-toggle="collapse" data-target="#register__button">Register New Account</button>
               <RegisterForm />
             </div>
