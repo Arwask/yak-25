@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import 'bootstrap';
 import './Login.css';
 
@@ -12,6 +13,7 @@ class Login extends Component {
       error: ''
     };
   }
+
   handleSubmit = function(e) {
     e.preventDefault();
     console.log('Submit called');
@@ -22,6 +24,7 @@ class Login extends Component {
         if (data.length > 0) {
           if (this.state.rememberMe === true) {
             localStorage.setItem('userId', `${data[0].id}`);
+            this.props.loginHandler();
           } else sessionStorage.setItem('userId', `${data[0].id}`);
         } else {
           this.setState({ error: 'User Not Found' });
@@ -40,7 +43,7 @@ class Login extends Component {
   }.bind(this);
   render() {
     return (
-      <div className="loginDiv">
+      <div className="collapse loginDiv" id="login__button">
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Email address</label>

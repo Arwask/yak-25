@@ -10,21 +10,49 @@ class Dashboard extends Component {
       loggedIn: false
     };
   }
-  userInLocalStorage = localStorage.getItem('userId');
-  // if(userInLocalStorage) {
-  //   console.log(userInLocalStorage);
-  //   this.setState({ loggedIn: true });
-  // }
+  componentDidMount() {
+    let userInLocalStorage = localStorage.getItem('userId');
+    if (userInLocalStorage) {
+      this.setState({ loggedIn: true });
+    }
+  }
+  loginHandler = function() {
+    this.setState({ loggedIn: true });
+  }.bind(this);
   render() {
     return (
       <div>
-        {this.state.loggedIn ? <div>This is Dashboard Component after logged in</div> : <Login />}
-        <div />
-        <div>
-          <button type="button" className="btn btn-primary">
-            Register
-          </button>
-        </div>
+        <h1>Welcome to Yak!</h1>
+        {this.state.loggedIn ? (
+          <div>Dashboard after logging in</div>
+        ) : (
+          <div className="container">
+            <div className="row">
+              <div className="col-6">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  data-toggle="collapse"
+                  aria-controls="login__button"
+                  data-target="#login__button"
+                >
+                  Log In
+                </button>
+                <Login loginHandler={this.loginHandler} />
+              </div>
+              <div className="col-6">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  data-toggle="collapse"
+                  data-target="#register__button"
+                >
+                  Register New Account
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
