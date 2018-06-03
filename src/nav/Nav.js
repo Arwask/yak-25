@@ -7,7 +7,15 @@ import './Nav.css';
 class Nav extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      loggedIn: false
+    };
+  }
+  componentDidMount() {
+    let userInLocalStorage = localStorage.getItem('userId');
+    if (userInLocalStorage) {
+      this.setState({ loggedIn: true });
+    }
   }
   render() {
     return (
@@ -25,42 +33,52 @@ class Nav extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Logo
-                </Link>
-              </li>
-              <li className="nav-item ">
-                <Link className="nav-link" to="/my-profile">
-                  My Profile
-                </Link>
-              </li>
-              <li className="nav-item ">
-                <form className="form-inline my-2 my-lg-0">
-                  <input
-                    className="form-control mr-sm-4"
-                    type="search"
-                    placeholder="Search friends, posts, etc.."
-                    aria-label="Search"
-                  />
-                  <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                    Search
+            {this.state.loggedIn ? (
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/">
+                    Logo
+                  </Link>
+                </li>
+                <li className="nav-item ">
+                  <Link className="nav-link" to="/my-profile">
+                    My Profile
+                  </Link>
+                </li>
+                <li className="nav-item ">
+                  <form className="form-inline my-2 my-lg-0">
+                    <input
+                      className="form-control mr-sm-4"
+                      type="search"
+                      placeholder="Search friends, posts, etc.."
+                      aria-label="Search"
+                    />
+                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+                      Search
+                    </button>
+                  </form>
+                </li>
+                <li>
+                  <Link className="nav-link" to="/settings">
+                    Settings
+                  </Link>
+                </li>
+                <li>
+                  <button type="button" className="btn btn-primary">
+                    Logout
                   </button>
-                </form>
-              </li>
-              <li>
-                <Link className="nav-link" to="/settings">
-                  Settings
-                </Link>
-              </li>
-              <li>
-                <button type="button" className="btn btn-primary">
-                  Logout
-                </button>
-              </li>
-              <li />
-            </ul>
+                </li>
+                <li />
+              </ul>
+            ) : (
+              <ul className="nav-bar nav">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/">
+                    Logo
+                  </Link>
+                </li>
+              </ul>
+            )}
           </div>
         </nav>
       </div>
