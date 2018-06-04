@@ -55,7 +55,7 @@ class Nav extends Component {
                 </Link>
               </li>
               <li>
-                <button type="button" className="btn btn-primary">
+                <button type="button" className="btn btn-primary my-2 my-sm-0">
                   Logout
                 </button>
               </li>
