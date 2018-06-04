@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+import RegisterForm from '../register/RegisterForm';
+
 import 'bootstrap';
 import './Dashboard.css';
 import Login from './login/Login';

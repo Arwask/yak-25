@@ -1,202 +1,226 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "firstName": "Arwa",
-            "lastName": "K",
-            "email": "arwa@gmail.com",
-            "location": "Nashville, TN",
-            "password": "123abc",
-            "rememberMe": false,
-            "image": "./img/arwa.jpg"
-        },
-        {
-            "id": 2,
-            "firstName": "Kimmy",
-            "lastName": "Bird",
-            "email": "kimmy@gmail.com",
-            "location": "Nashville, TN",
-            "password": "123abc",
-            "rememberMe": true,
-            "image": "./img/kimmy.jpg"
-        },
-        {
-            "id": 3,
-            "firstName": "Steve",
-            "lastName": "Brownlee",
-            "email": "steve@gmail.com",
-            "location": "Nashville, TN",
-            "password": "123abc",
-            "rememberMe": false,
-            "image": "./img/steve.jpg"
-        },
-        {
-            "id": 4,
-            "firstName": "Meg",
-            "lastName": "Ducharme",
-            "email": "meg@gmail.com",
-            "location": "Nashville, TN",
-            "password": "123abc",
-            "rememberMe": true,
-            "image": "./img/meg.jpg"
-        }
-    ],
-    "friends": [
-        {
-            "id": 1,
-            "userId1": 1,
-            "userId2": 2, 
-            "accepted": true
-        },
-        {
-            "id": 2,
-            "userId1": 2,
-            "userId2": 3, 
-            "accepted": true
-        },
-        {
-            "id": 3,
-            "userId1": 3,
-            "userId2": 4, 
-            "accepted": false
-        },
-        {
-            "id": 4,
-            "userId1": 1,
-            "userId2": 4, 
-            "accepted": true
-        }
-    ],
-    "following": [
-        {
-            "id": 1,
-            "followeeId": 1,
-            "followerId": 3
-        },
-        {
-            "id": 2,
-            "followeeId": 2,
-            "followerId": 4
-        }
-    ],
-    "posts": [
-        {
-            "id": 1,
-            "text": "Lorem ipsum dolor amet artisan retro squid air plant coloring book hashtag occupy ramps organic palo santo irony. Tattooed crucifix health goth, keffiyeh pickled listicle pop-up hella af woke prism intelligentsia vexillologist readymade. Gochujang austin synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
-            "timestamp": 1527711021554,
-            "userId": 2,
-            "recipientId": null
-        },
-        {
-            "id": 2,
-            "text": "Lorem ipsum dolor amet artisan retro squid air plant coloring book hashtag occupy ramps organic palo santo irony. ",
-            "timestamp": 1527711021557,
-            "userId": 3,
-            "recipientId": 2
-        },
-        {
-            "id": 3,
-            "text": "Tattooed crucifix health goth, keffiyeh pickled listicle pop-up hella af woke prism intelligentsia vexillologist readymade. Gochujang austin synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
-            "timestamp": 1527711021559,
-            "userId": 4,
-            "recipientId": null
-        },
-        {
-            "id": 4,
-            "text": "Gochujang austin synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
-            "timestamp": 1527711021552,
-            "userId": 1,
-            "recipientId": 4
-        },
-        {
-            "id": 5,
-            "text": "Tattooed  synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
-            "timestamp": 1527711021551,
-            "userId": 2,
-            "recipientId": null
-        }
-    ],
-    "liked_posts": [
-        {
-            "id": 1,
-            "postId": 3,
-            "userId": 2
-        },
-        {
-            "id": 2,
-            "postId": 1,
-            "userId": 4
-        },
-        {
-            "id": 3,
-            "postId": 3,
-            "userId": 3
-        }
-    ],
-    "events": [
-        {
-            "id": 1,
-            "userId": 3,
-            "name": "Pizza night",
-            "start_date": 1527711426481,
-            "end_date": 1527711476481,
-            "location": "NSS",
-            "timestamp": 1527711021551
-        },
-        {
-            "id": 2,
-            "userId": 2,
-            "name": "Movie night",
-            "start_date": 1527714426461,
-            "end_date": 1527711496481,
-            "location": "NSS",
-            "timestamp": 1527711027551
-        }
-    ],
-    "settings": [
-        {
-            "id": 1,
-            "userId": 1,
-            "backgroundColor": "#800000",
-            "fontColor": "#FFFF00"
-        },
-        {
-            "id": 2,
-            "userId": 3,
-            "backgroundColor": "#808000",
-            "fontColor": "#800000"
-        },
-        {
-            "id": 3,
-            "userId": 4,
-            "backgroundColor": "#00FF00",
-            "fontColor": "#0000ff"
-        }
-    ],
-    "ads": [
-        {
-            "id": 1,
-            "company": "NSS",
-            "title": "Learn software development!",
-            "content": "6 month bootcamp"
-        },
-        {
-            "id": 2,
-            "company": "Apple",
-            "title": "iPhone",
-            "content": "newest iPhone"
-        },
-        {
-            "id": 3,
-            "company": "Horseback & Co",
-            "title": "Horseback riding lessons",
-            "content": "Summer camp classes!"
-        },
-        {
-            "id": 4,
-            "company": "Tesla",
-            "title": "Newest car",
-            "content": "No one will hear you zoom by"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Arwa",
+      "lastName": "K",
+      "email": "arwa@gmail.com",
+      "location": "Nashville, TN",
+      "password": "123abc",
+      "rememberMe": false,
+      "image": "./img/arwa.jpg"
+    },
+    {
+      "id": 2,
+      "firstName": "Kimmy",
+      "lastName": "Bird",
+      "email": "kimmy@gmail.com",
+      "location": "Nashville, TN",
+      "password": "123abc",
+      "rememberMe": true,
+      "image": "./img/kimmy.jpg"
+    },
+    {
+      "id": 3,
+      "firstName": "Steve",
+      "lastName": "Brownlee",
+      "email": "steve@gmail.com",
+      "location": "Nashville, TN",
+      "password": "123abc",
+      "rememberMe": false,
+      "image": "./img/steve.jpg"
+    },
+    {
+      "id": 4,
+      "firstName": "Meg",
+      "lastName": "Ducharme",
+      "email": "meg@gmail.com",
+      "location": "Nashville, TN",
+      "password": "123abc",
+      "rememberMe": true,
+      "image": "./img/meg.jpg"
+    },
+    {
+      "firstName": "Kimberly",
+      "lastName": "Bird",
+      "password": "123",
+      "emailAddress": "kimberly.j.bird@gmail.com",
+      "location": "123",
+      "id": 5
+    },
+    {
+      "firstName": "Peter",
+      "lastName": "Bird",
+      "password": "123",
+      "emailAddress": "pbird08@gmail.com",
+      "location": "nashville",
+      "id": 6
+    },
+    {
+      "firstName": "Kimberly",
+      "lastName": "Bird",
+      "password": "123",
+      "emailAddress": "kimberlybird@gmail.com",
+      "location": "Denver",
+      "id": 7
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId1": 1,
+      "userId2": 2,
+      "accepted": true
+    },
+    {
+      "id": 2,
+      "userId1": 2,
+      "userId2": 3,
+      "accepted": true
+    },
+    {
+      "id": 3,
+      "userId1": 3,
+      "userId2": 4,
+      "accepted": false
+    },
+    {
+      "id": 4,
+      "userId1": 1,
+      "userId2": 4,
+      "accepted": true
+    }
+  ],
+  "following": [
+    {
+      "id": 1,
+      "followeeId": 1,
+      "followerId": 3
+    },
+    {
+      "id": 2,
+      "followeeId": 2,
+      "followerId": 4
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "text": "Lorem ipsum dolor amet artisan retro squid air plant coloring book hashtag occupy ramps organic palo santo irony. Tattooed crucifix health goth, keffiyeh pickled listicle pop-up hella af woke prism intelligentsia vexillologist readymade. Gochujang austin synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
+      "timestamp": 1527711021554,
+      "userId": 2,
+      "recipientId": null
+    },
+    {
+      "id": 2,
+      "text": "Lorem ipsum dolor amet artisan retro squid air plant coloring book hashtag occupy ramps organic palo santo irony. ",
+      "timestamp": 1527711021557,
+      "userId": 3,
+      "recipientId": 2
+    },
+    {
+      "id": 3,
+      "text": "Tattooed crucifix health goth, keffiyeh pickled listicle pop-up hella af woke prism intelligentsia vexillologist readymade. Gochujang austin synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
+      "timestamp": 1527711021559,
+      "userId": 4,
+      "recipientId": null
+    },
+    {
+      "id": 4,
+      "text": "Gochujang austin synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
+      "timestamp": 1527711021552,
+      "userId": 1,
+      "recipientId": 4
+    },
+    {
+      "id": 5,
+      "text": "Tattooed  synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
+      "timestamp": 1527711021551,
+      "userId": 2,
+      "recipientId": null
+    }
+  ],
+  "liked_posts": [
+    {
+      "id": 1,
+      "postId": 3,
+      "userId": 2
+    },
+    {
+      "id": 2,
+      "postId": 1,
+      "userId": 4
+    },
+    {
+      "id": 3,
+      "postId": 3,
+      "userId": 3
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": 3,
+      "name": "Pizza night",
+      "start_date": 1527711426481,
+      "end_date": 1527711476481,
+      "location": "NSS",
+      "timestamp": 1527711021551
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "name": "Movie night",
+      "start_date": 1527714426461,
+      "end_date": 1527711496481,
+      "location": "NSS",
+      "timestamp": 1527711027551
+    }
+  ],
+  "settings": [
+    {
+      "id": 1,
+      "userId": 1,
+      "backgroundColor": "#800000",
+      "fontColor": "#FFFF00"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "backgroundColor": "#808000",
+      "fontColor": "#800000"
+    },
+    {
+      "id": 3,
+      "userId": 4,
+      "backgroundColor": "#00FF00",
+      "fontColor": "#0000ff"
+    }
+  ],
+  "ads": [
+    {
+      "id": 1,
+      "company": "NSS",
+      "title": "Learn software development!",
+      "content": "6 month bootcamp"
+    },
+    {
+      "id": 2,
+      "company": "Apple",
+      "title": "iPhone",
+      "content": "newest iPhone"
+    },
+    {
+      "id": 3,
+      "company": "Horseback & Co",
+      "title": "Horseback riding lessons",
+      "content": "Summer camp classes!"
+    },
+    {
+      "id": 4,
+      "company": "Tesla",
+      "title": "Newest car",
+      "content": "No one will hear you zoom by"
+    }
+  ]
 }
