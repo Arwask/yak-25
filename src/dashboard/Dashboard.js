@@ -49,8 +49,10 @@ class Dashboard extends Component {
                   type="button"
                   className="btn btn-primary"
                   data-toggle="collapse"
+                  aria-controls="register__button"
                   data-target="#register__button"
                 >
+                  <RegisterForm />
                   Register New Account
                 </button>
               </div>
