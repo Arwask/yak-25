@@ -1,11 +1,12 @@
 .btn {
-    margin: 10px;
+  margin: 10px;
+  /* width: 250px; */
 }
 
 h1 {
-    color: black;
-    font-size: 3em;
-    padding-left: 25px;
-    padding-top: 25px;
-    font-family: 'Homemade Apple', cursive;
+  color: black;
+  font-size: 3em;
+  padding-left: 25px;
+  padding-top: 25px;
+  font-family: 'Homemade Apple', cursive;
 }

@@ -1,0 +1,9 @@
+.loginDiv {
+  margin: 10px;
+  max-width: 450px;
+  padding: 5px;
+}
+
+.errorP {
+  color: red;
+}
