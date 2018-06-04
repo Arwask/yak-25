@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import RegisterForm from '../register/RegisterForm';
 
@@ -49,12 +48,11 @@ class Dashboard extends Component {
                   type="button"
                   className="btn btn-primary"
                   data-toggle="collapse"
-                  aria-controls="register__button"
                   data-target="#register__button"
                 >
-                  <RegisterForm />
                   Register New Account
                 </button>
+                <RegisterForm />
               </div>
             </div>
           </div>

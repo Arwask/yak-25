@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import 'bootstrap';
 import './Login.css';
 
@@ -64,7 +63,7 @@ class Login extends Component {
               value={this.state.password}
               type="password"
               className="form-control"
-              id="password"
+              id="loginPassword"
               placeholder="Password"
               onChange={this.handlePasswordChange}
               required
