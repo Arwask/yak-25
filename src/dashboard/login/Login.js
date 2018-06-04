@@ -23,8 +23,8 @@ class Login extends Component {
         if (data.length > 0) {
           if (this.state.rememberMe === true) {
             localStorage.setItem('userId', `${data[0].id}`);
-            this.props.loginHandler();
           } else sessionStorage.setItem('userId', `${data[0].id}`);
+          this.props.loginHandler();
         } else {
           this.setState({ error: 'User Not Found' });
         }

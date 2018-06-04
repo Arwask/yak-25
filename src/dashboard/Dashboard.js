@@ -15,7 +15,8 @@ class Dashboard extends Component {
   }
   componentDidMount() {
     let userInLocalStorage = localStorage.getItem('userId');
-    if (userInLocalStorage) {
+    let userInSessionStorage = sessionStorage.getItem('userId');
+    if (userInLocalStorage || userInSessionStorage) {
       this.setState({ loggedIn: true });
     }
   }
@@ -34,7 +35,7 @@ class Dashboard extends Component {
               <div className="col-6">
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn btn-primary col-6"
                   data-toggle="collapse"
                   aria-controls="login__button"
                   data-target="#login__button"
@@ -46,7 +47,7 @@ class Dashboard extends Component {
               <div className="col-6">
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn btn-primary col-6"
                   data-toggle="collapse"
                   data-target="#register__button"
                 >
