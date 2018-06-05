@@ -52,7 +52,7 @@ class Dashboard extends Component {
                 >
                   Register New Account
                 </button>
-                <RegisterForm />
+                <RegisterForm loginHandler={this.loginHandler} />
               </div>
             </div>
           </div>

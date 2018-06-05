@@ -57,7 +57,8 @@ export default class RegisterForm extends Component {
             password: newContact.password,
             location: newContact.location
           })
-        )
+        ),
+        this.props.loginHandler()
       );
   }.bind(this);
 
