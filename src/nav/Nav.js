@@ -7,16 +7,22 @@ import './Nav.css';
 class Nav extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loggedIn: false
-    };
+    this.state = {};
   }
+
   componentDidMount() {
     let userInLocalStorage = localStorage.getItem('userId');
-    if (userInLocalStorage) {
-      this.setState({ loggedIn: true });
+    let userInSessionStorage = sessionStorage.getItem('userId');
+    if (userInLocalStorage || userInSessionStorage) {
+      this.props.setProps();
     }
   }
+
+  logMeOut = function() {
+    this.props.logOut();
+    this.props.setProps(false);
+  }.bind(this);
+
   render() {
     return (
       <div>
@@ -33,7 +39,7 @@ class Nav extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            {this.state.loggedIn ? (
+            {this.props.loggedIn ? (
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <Link className="nav-link" to="/">
@@ -64,7 +70,7 @@ class Nav extends Component {
                   </Link>
                 </li>
                 <li>
-                  <button type="button" className="btn btn-primary">
+                  <button type="button" className="btn btn-primary" onClick={this.logMeOut}>
                     Logout
                   </button>
                 </li>
