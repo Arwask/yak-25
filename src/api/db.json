@@ -162,8 +162,9 @@
       "id": 1,
       "userId": 3,
       "name": "Pizza night",
-      "start_date": 1527711426481,
-      "end_date": 1527711476481,
+      "date": 1527711426481,
+      "start_date": "7pm",
+      "end_date": "10pm",
       "location": "NSS",
       "timestamp": 1527711021551
     },
@@ -171,10 +172,50 @@
       "id": 2,
       "userId": 2,
       "name": "Movie night",
-      "start_date": 1527714426461,
-      "end_date": 1527711496481,
+      "date": 1527714426461,
+      "start_date": "10am",
+      "end_date": "12pm",
       "location": "NSS",
       "timestamp": 1527711027551
+    },
+    {
+      "userId": null,
+      "name": "Kimberly Bird",
+      "date": "2018-06-08",
+      "start_date": "2",
+      "end_date": "5",
+      "location": "nashville",
+      "timestamp": 1528225373529,
+      "id": 3
+    },
+    {
+      "name": "Kimberly Bird",
+      "date": "2018-06-15",
+      "start_date": "1",
+      "end_date": "2",
+      "location": "nashville",
+      "timestamp": 1528225463921,
+      "id": 4
+    },
+    {
+      "userId": null,
+      "name": "Kimberly Bird",
+      "date": "2018-06-09",
+      "start_date": "1",
+      "end_date": "4",
+      "location": "Denver",
+      "timestamp": 1528225533004,
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "name": "awtawr",
+      "date": "2018-06-08",
+      "start_date": "3",
+      "end_date": "6",
+      "location": "nashville",
+      "timestamp": 1528226150160,
+      "id": 6
     }
   ],
   "settings": [
