@@ -63,6 +63,38 @@
       "emailAddress": "kimberlybird@gmail.com",
       "location": "Denver",
       "id": 7
+    },
+    {
+      "firstName": "bob",
+      "lastName": "alice",
+      "password": "a",
+      "emailAddress": "b@a.com",
+      "location": "Atlanta",
+      "id": 8
+    },
+    {
+      "firstName": "Lola",
+      "lastName": "Pola",
+      "password": "a",
+      "emailAddress": "a@p.com",
+      "location": "houston",
+      "id": 9
+    },
+    {
+      "firstName": "Lola",
+      "lastName": "Pola",
+      "password": "a",
+      "emailAddress": "a@p.com",
+      "location": "xyz",
+      "id": 10
+    },
+    {
+      "firstName": "kjzchZMNZ",
+      "lastName": ",MDVND",
+      "password": "djh",
+      "emailAddress": "a@cc.com",
+      "location": "nsjk",
+      "id": 11
     }
   ],
   "friends": [
