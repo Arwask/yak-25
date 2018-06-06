@@ -39,30 +39,6 @@
       "password": "123abc",
       "rememberMe": true,
       "image": "./img/meg.jpg"
-    },
-    {
-      "firstName": "Kimberly",
-      "lastName": "Bird",
-      "password": "123",
-      "emailAddress": "kimberly.j.bird@gmail.com",
-      "location": "123",
-      "id": 5
-    },
-    {
-      "firstName": "Peter",
-      "lastName": "Bird",
-      "password": "123",
-      "emailAddress": "pbird08@gmail.com",
-      "location": "nashville",
-      "id": 6
-    },
-    {
-      "firstName": "Kimberly",
-      "lastName": "Bird",
-      "password": "123",
-      "emailAddress": "kimberlybird@gmail.com",
-      "location": "Denver",
-      "id": 7
     }
   ],
   "friends": [
