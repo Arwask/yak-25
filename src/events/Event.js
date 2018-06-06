@@ -3,11 +3,12 @@ import React, { Component } from "react"
 export default class Event extends Component {
     render() {
         return (
-            <div className="card event">
+            <div className="card eventCard">
+                <div className="card-header"><h5>{this.props.event.name}</h5>
+                </div>
                 <div className="card-body">
-                    <h5 className="card-title">By {this.props.event.userId}</h5>
                     <ul>
-                        <li className="card-name">Event: {this.props.event.name}
+                        <li className="card-name">By {this.props.event.firstName} {this.props.event.lastName}
                         </li>
                         <li className="card-date">Date: {this.props.event.date}
                         </li>

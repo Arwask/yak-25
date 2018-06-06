@@ -179,35 +179,6 @@
       "timestamp": 1527711027551
     },
     {
-      "userId": null,
-      "name": "Kimberly Bird",
-      "date": "2018-06-08",
-      "start_date": "2",
-      "end_date": "5",
-      "location": "nashville",
-      "timestamp": 1528225373529,
-      "id": 3
-    },
-    {
-      "name": "Kimberly Bird",
-      "date": "2018-06-15",
-      "start_date": "1",
-      "end_date": "2",
-      "location": "nashville",
-      "timestamp": 1528225463921,
-      "id": 4
-    },
-    {
-      "userId": null,
-      "name": "Kimberly Bird",
-      "date": "2018-06-09",
-      "start_date": "1",
-      "end_date": "4",
-      "location": "Denver",
-      "timestamp": 1528225533004,
-      "id": 5
-    },
-    {
       "userId": 2,
       "name": "awtawr",
       "date": "2018-06-08",
@@ -216,6 +187,26 @@
       "location": "nashville",
       "timestamp": 1528226150160,
       "id": 6
+    },
+    {
+      "userId": 2,
+      "name": "testing",
+      "date": "2018-06-16",
+      "start_date": "4pm",
+      "end_date": "6pm",
+      "location": "nashville",
+      "timestamp": 1528245514874,
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "name": "modal testing",
+      "date": "2018-06-15",
+      "start_date": "3pm",
+      "end_date": "7pm",
+      "location": "Denver",
+      "timestamp": 1528245998839,
+      "id": 8
     }
   ],
   "settings": [

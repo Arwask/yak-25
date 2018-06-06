@@ -28,19 +28,17 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to Yak!</h1>
         {this.state.loggedIn ? (
           <div>
-            <div>Dashboard after logging in</div>
             <DisplayEvents />
           </div>
         ) : (
             <div className="container">
               <div className="row">
-                <div className="col-6">
+                <div className="col-lg-4 col-md-6 col-sm-12">
                   <button
                     type="button"
-                    className="btn btn-primary col-6"
+                    className="btn btn-primary col-lg-4 col-md-6 col-sm-12 dash__btn"
                     data-toggle="collapse"
                     aria-controls="login__button"
                     data-target="#login__button"
@@ -49,14 +47,14 @@ class Dashboard extends Component {
                 </button>
                   <Login loginHandler={this.loginHandler} />
                 </div>
-                <div className="col-6">
+                <div className="col-lg-6 col-md-6 col-sm-12">
                   <button
                     type="button"
-                    className="btn btn-primary col-6"
+                    className="btn btn-primary col-lg-6 col-md-6 col-sm-12 dash__btn"
                     data-toggle="collapse"
                     data-target="#register__button"
                   >
-                    Register New Account
+                    Register
                 </button>
                   <RegisterForm loginHandler={this.loginHandler} />
                 </div>
