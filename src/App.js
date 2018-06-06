@@ -15,7 +15,7 @@ class App extends Component {
   logOut = function() {
     if (sessionStorage.getItem('userId')) sessionStorage.removeItem('userId');
     if (localStorage.getItem('userId')) localStorage.removeItem('userId');
-  }.bind(this);
+  };
 
   setProps = function(x) {
     this.setState({ loggedIn: x });

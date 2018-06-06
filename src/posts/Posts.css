@@ -1,0 +1,8 @@
+.textareaDiv {
+  width: 50%;
+  margin: auto;
+}
+
+.textareaDiv textarea {
+  margin-bottom: 10px;
+}

@@ -5,6 +5,7 @@ import RegisterForm from '../register/RegisterForm';
 import 'bootstrap';
 import './Dashboard.css';
 import Login from './login/Login';
+import Posts from '../posts/Posts';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -63,7 +64,9 @@ class Dashboard extends Component {
       <div>
         <h1>Welcome to Yak!</h1>
         {this.props.loggedIn ? (
-          <div>Dashboard after logging in</div>
+          <div>
+            <Posts />
+          </div>
         ) : (
           <div className="container">
             <div className="row">
