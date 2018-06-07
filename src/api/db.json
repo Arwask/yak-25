@@ -135,38 +135,18 @@
   ],
   "events": [
     {
-      "id": 1,
-      "userId": 3,
-      "name": "Pizza night",
-      "date": 1527711426481,
-      "start_date": "7pm",
-      "end_date": "10pm",
-      "location": "NSS",
-      "timestamp": 1527711021551
-    },
-    {
-      "id": 2,
       "userId": 2,
-      "name": "Movie night",
-      "date": 1527714426461,
-      "start_date": "10am",
-      "end_date": "12pm",
-      "location": "NSS",
-      "timestamp": 1527711027551
-    },
-    {
-      "userId": 2,
-      "name": "awtawr",
+      "name": "Pizza Night",
       "date": "2018-06-08",
-      "start_date": "3",
-      "end_date": "6",
+      "start_date": "3pm",
+      "end_date": "6pm",
       "location": "nashville",
       "timestamp": 1528226150160,
       "id": 6
     },
     {
-      "userId": 2,
-      "name": "testing",
+      "userId": 1,
+      "name": "Movie Night",
       "date": "2018-06-16",
       "start_date": "4pm",
       "end_date": "6pm",
@@ -175,7 +155,7 @@
       "id": 7
     },
     {
-      "userId": 2,
+      "userId": 3,
       "name": "modal testing",
       "date": "2018-06-15",
       "start_date": "3pm",
@@ -183,6 +163,26 @@
       "location": "Denver",
       "timestamp": 1528245998839,
       "id": 8
+    },
+    {
+      "userId": 4,
+      "name": "Code Camp",
+      "date": "2018-06-19",
+      "start_date": "10am",
+      "end_date": "5pm",
+      "location": "NSS",
+      "timestamp": 1528383923102,
+      "id": 9
+    },
+    {
+      "userId": 2,
+      "name": "Kimmy's Event",
+      "date": "2018-06-19",
+      "start_date": "3pm",
+      "end_date": "8pm",
+      "location": "East Nashville",
+      "timestamp": 1528399358043,
+      "id": 10
     }
   ],
   "settings": [

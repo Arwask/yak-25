@@ -25,20 +25,19 @@ export default class DisplayEvents extends Component {
             timestamp: Date.now()
         })
     })
-        .then(() => {
-            return fetch("http://localhost:8088/events")
-        })
         .then(r => r.json())
-        .then(events => {
+        .then(e => {
             this.setState({
                 name: "",
                 date: "",
                 start_date: "",
                 end_date: "",
-                location: "",
-                events: events
+                location: ""
             })
+            alert("Event Created!")
         })
+
+    // TO DO: clear fields and alert that event created successfully 
 
     handleFieldChange = (evt) => {
         const stateToChange = {}
@@ -47,72 +46,61 @@ export default class DisplayEvents extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8088/users?_embed=events")
+        let listOfEvents = []
+
+        fetch("http://localhost:8088/events?_expand=user")
             .then(r => r.json())
-            .then(events => this.setState({ events: events }))
+            .then(event => {
+                event.forEach(currentEvent => listOfEvents.push(currentEvent))
+                this.setState({ events: listOfEvents })
+            })
     }
 
     render() {
         return (
-            <div className="container-full">
+            <div className="container-full" >
                 <div className="row">
                     <div className="col content">
                         <div className="eventsFeed">
-                            <button type="button" className="btn btn-info btn-lg eventBtn" data-toggle="modal" data-target="#newEventModal">Add a New Event</button>
-
-                            <div className="modal fade" id="newEventModal" role="dialog">
-                                <div className="modal-dialog">
-                                    <div className="modal-content">
-                                        <div className="modal-header"><h3>Add a New Event</h3>
-                                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                            <div className="event-header"><h3>Add a New Event</h3>
+                                <div className="event-form-body">
+                                    <form>
+                                        <div className="form-group">
+                                            <input id="name"
+                                                placeholder="Event Name"
+                                                value={this.state.name}
+                                                onChange={this.handleFieldChange}
+                                                className="form-control"
+                                                rows="4"></input>
+                                            <input id="date"
+                                                type="date"
+                                                value={this.state.date}
+                                                onChange={this.handleFieldChange}
+                                                className="form-control"
+                                                rows="4"></input>
+                                            <input id="start_date"
+                                                placeholder="Start Time"
+                                                value={this.state.start_date}
+                                                onChange={this.handleFieldChange}
+                                                className="form-control"
+                                                rows="4"></input>
+                                            <input id="end_date"
+                                                placeholder="End Time"
+                                                value={this.state.end_date}
+                                                onChange={this.handleFieldChange}
+                                                className="form-control"
+                                                rows="4"></input>
+                                            <input id="location"
+                                                placeholder="Location"
+                                                value={this.state.location}
+                                                onChange={this.handleFieldChange}
+                                                className="form-control"
+                                                rows="4"></input>
                                         </div>
-                                        <div className="modal-body">
-                                            <form>
-                                                <div className="form-group">
-                                                    <input id="name"
-                                                        placeholder="Event Name"
-                                                        value={this.state.name}
-                                                        onChange={this.handleFieldChange}
-                                                        className="form-control"
-                                                        rows="4"></input>
-                                                    <input id="date"
-                                                        type="date"
-                                                        value={this.state.date}
-                                                        onChange={this.handleFieldChange}
-                                                        className="form-control"
-                                                        rows="4"></input>
-                                                    <input id="start_date"
-                                                        placeholder="Start Time"
-                                                        value={this.state.start_date}
-                                                        onChange={this.handleFieldChange}
-                                                        className="form-control"
-                                                        rows="4"></input>
-                                                    <input id="end_date"
-                                                        placeholder="End Time"
-                                                        value={this.state.end_date}
-                                                        onChange={this.handleFieldChange}
-                                                        className="form-control"
-                                                        rows="4"></input>
-                                                    <input id="location"
-                                                        placeholder="Location"
-                                                        value={this.state.location}
-                                                        onChange={this.handleFieldChange}
-                                                        className="form-control"
-                                                        rows="4"></input>
-                                                </div>
-                                                <button type="button" onClick={this.postNewEvent} className="btn btn-info btn-lg">Post</button>
-                                            </form>
-                                        </div>
-                                        <div className="modal-footer">
-                                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-
+                                        <button type="button" onClick={this.postNewEvent} className="btn btn-info btn-lg">Post</button>
+                                    </form>
                                 </div>
                             </div>
-
-
-
 
                             <EventsList events={this.state.events} activeUser={this.props.activeUser} />
                         </div>

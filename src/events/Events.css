@@ -4,7 +4,6 @@ h1, h2, h3, h4, h5 {
     text-align: center;
 }
 
-
 .eventsFeed {
     margin-left: 10px;
 }
@@ -19,4 +18,8 @@ h1, h2, h3, h4, h5 {
 
 .eventBtn {
     padding: 30px;
+}
+
+.event-header {
+    max-width: 300px;
 }

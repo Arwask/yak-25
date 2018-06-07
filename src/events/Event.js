@@ -8,7 +8,7 @@ export default class Event extends Component {
                 </div>
                 <div className="card-body">
                     <ul>
-                        <li className="card-name">By {this.props.event.firstName} {this.props.event.lastName}
+                        <li className="card-name">Hosted by: {this.props.event.user.firstName} {this.props.event.user.lastName}
                         </li>
                         <li className="card-date">Date: {this.props.event.date}
                         </li>
