@@ -183,6 +183,33 @@
       "location": "East Nashville",
       "timestamp": 1528399358043,
       "id": 10
+    },
+    {
+      "userId": 2,
+      "name": "Code Camp",
+      "date": "2018-06-30",
+      "timestamp": 1528471784626,
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "name": "Code Camp",
+      "date": "2018-06-28",
+      "start_date": "",
+      "end_date": "",
+      "location": "",
+      "timestamp": 1528471791535,
+      "id": 12
+    },
+    {
+      "userId": 2,
+      "name": "Code Camp",
+      "date": "2018-06-25",
+      "start_date": "",
+      "end_date": "",
+      "location": "",
+      "timestamp": 1528471799276,
+      "id": 13
     }
   ],
   "settings": [

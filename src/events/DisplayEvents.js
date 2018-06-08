@@ -48,11 +48,11 @@ export default class DisplayEvents extends Component {
     componentDidMount() {
         let listOfEvents = []
 
-        fetch("http://localhost:8088/events?_expand=user")
+        fetch("http://localhost:8088/events?_sort=date&_order=asc&_expand=user")
             .then(r => r.json())
             .then(event => {
                 event.forEach(currentEvent => listOfEvents.push(currentEvent))
-                this.setState({ events: listOfEvents })
+                this.setState({ events: listOfEvents.slice(0,7) })
             })
     }
 
