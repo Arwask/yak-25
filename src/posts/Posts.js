@@ -2,25 +2,21 @@ import React, { Component } from 'react';
 import 'bootstrap';
 import './Posts.css';
 import FriendsList from '../friendsList/FriendsList';
+import PostList from './PostList';
 
 class Posts extends Component {
   state = {
     postText: '',
     friendsName: [],
-    selectedFriend: null
+    selectedFriend: 'null',
+    posts: [],
+    currentUser: null
   };
-
+  unique = 1;
   componentDidMount() {
     let nameList = [];
-    let id = sessionStorage.getItem('ActiveUser') || localStorage.getItem('ActiveUser');
-
-    // Get all people who I added as friends
-    // Get each person's PK
-
-    // Get all people who added me as friends
-    // Get each person's PK
-
-    // Query `users` table with each PK. i.e. (id=1&id=8&id=11)
+    let id = +sessionStorage.getItem('ActiveUser') || +localStorage.getItem('ActiveUser');
+    this.setState({ currentUser: id });
 
     fetch(`http://localhost:8088/friends?user1Id=${id}&accepted=true`)
       .then(r => r.json())
@@ -32,13 +28,12 @@ class Posts extends Component {
           .then(r => r.json())
           .then(friendsList2 => {
             friendsList2.map(friend => {
-              nameList.push(friend.user1Id);
+              return nameList.push(friend.user1Id);
             });
             let str = 'id=' + nameList.join('&id=');
             fetch(`http://localhost:8088/users?${str}`)
               .then(r => r.json())
               .then(friends => {
-                console.log(friends);
                 this.setState({ friendsName: friends });
               });
           });
@@ -49,12 +44,20 @@ class Posts extends Component {
     this.setState({ selectedFriend: id });
   }.bind(this);
 
-  submitPost = function() {
+  deletePost = function(id) {
+    this.props.deletePostFromDb(id);
+  }.bind(this);
+
+  submitPost = function(e) {
+    e.preventDefault(); //to prevent the default submission
     let dataToPost = {
       text: this.state.postText,
       timestamp: Date.now(),
-      userId: +sessionStorage.getItem('ActiveUser'),
-      recipientId: this.state.selectedFriend !== '0' ? +this.state.selectedFriend : null
+      userId: +sessionStorage.getItem('ActiveUser') || +localStorage.getItem('ActiveUser'),
+      recipientId:
+        (this.state.selectedFriend !== '0') & (this.state.selectedFriend !== 'null')
+          ? +this.state.selectedFriend
+          : 'null'
     };
     fetch('http://localhost:8088/posts', {
       method: 'POST',
@@ -65,7 +68,8 @@ class Posts extends Component {
     })
       .then(r => r.json())
       .then(newPost => {
-        // console.log(newPost);
+        this.props.getAllPosts();
+        this.setState({ postText: '' });
       });
   }.bind(this);
 
@@ -76,7 +80,6 @@ class Posts extends Component {
   render() {
     return (
       <div className="form-group textareaDiv">
-        {/* <label></label> */}
         <form onSubmit={this.submitPost}>
           <textarea
             className="form-control"
@@ -94,7 +97,7 @@ class Posts extends Component {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Dropright
+              Select privacy
             </button>
             <FriendsList selectedFriend={this.selectedFriend} friendsName={this.state.friendsName} />
           </div>
@@ -104,6 +107,11 @@ class Posts extends Component {
             </button>
           </div>
         </form>
+        {this.props.posts.map(p => {
+          return (
+            <PostList key={this.unique++} posts={p} currentUser={this.state.currentUser} deletePost={this.deletePost} />
+          );
+        })}
       </div>
     );
   }
