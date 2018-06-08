@@ -100,26 +100,26 @@
   "friends": [
     {
       "id": 1,
-      "userId1": 1,
-      "userId2": 2,
+      "user1Id": 1,
+      "user2Id": 2,
       "accepted": true
     },
     {
       "id": 2,
-      "userId1": 2,
-      "userId2": 3,
+      "user1Id": 2,
+      "user2Id": 3,
       "accepted": true
     },
     {
       "id": 3,
-      "userId1": 3,
-      "userId2": 4,
+      "user1Id": 3,
+      "user2Id": 1,
       "accepted": false
     },
     {
       "id": 4,
-      "userId1": 1,
-      "userId2": 4,
+      "user1Id": 4,
+      "user2Id": 1,
       "accepted": true
     }
   ],
@@ -170,6 +170,69 @@
       "timestamp": 1527711021551,
       "userId": 2,
       "recipientId": null
+    },
+    {
+      "text": "Let's see what is on your mind.",
+      "timestamp": 1528312348688,
+      "userId": "1",
+      "recipientId": null,
+      "id": 6
+    },
+    {
+      "text": "Did it work????",
+      "timestamp": 1528312403085,
+      "userId": 1,
+      "recipientId": null,
+      "id": 7
+    },
+    {
+      "text": "kfmwelkfdmw",
+      "timestamp": 1528318807574,
+      "userId": 1,
+      "recipientId": null,
+      "id": 8
+    },
+    {
+      "text": "Hello There!",
+      "timestamp": 1528388494225,
+      "userId": 1,
+      "recipientId": "4",
+      "id": 9
+    },
+    {
+      "text": "Hey Kimmy!",
+      "timestamp": 1528388594029,
+      "userId": 1,
+      "recipientId": 2,
+      "id": 10
+    },
+    {
+      "text": "Does this happen??",
+      "timestamp": 1528388622049,
+      "userId": 1,
+      "recipientId": 4,
+      "id": 11
+    },
+    {
+      "text": "This is a very public post",
+      "timestamp": 1528388645580,
+      "userId": 1,
+      "recipientId": 0,
+      "id": 12
+    },
+    {
+      "text": "s,kfdhak;f",
+      "timestamp": 1528388850018,
+      "userId": 1,
+      "recipientId": 2,
+      "id": 13
+    },
+    {
+      "text": "Hope this is public!",
+      "timestamp": 1528389210047,
+      "userId": 1,
+      "recipientId": null,
+      "id": 14
     }
   ],
   "liked_posts": [

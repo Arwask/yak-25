@@ -19,8 +19,8 @@ class Dashboard extends Component {
   }
   componentDidMount() {
     console.log(this.props);
-    let userInLocalStorage = localStorage.getItem('userId');
-    let userInSessionStorage = sessionStorage.getItem('userId');
+    let userInLocalStorage = localStorage.getItem('ActiveUser');
+    let userInSessionStorage = sessionStorage.getItem('ActiveUser');
     if (userInLocalStorage || userInSessionStorage) {
       this.props.setProps(true);
     }
@@ -50,8 +50,8 @@ class Dashboard extends Component {
         console.log(data);
         if (data.length > 0) {
           if (this.state.rememberMe === true) {
-            localStorage.setItem('userId', `${data[0].id}`);
-          } else sessionStorage.setItem('userId', `${data[0].id}`);
+            localStorage.setItem('ActiveUser', `${data[0].id}`);
+          } else sessionStorage.setItem('ActiveUser', `${data[0].id}`);
           this.loginHandler();
         } else {
           this.setState({ error: 'User Not Found' });
