@@ -14,7 +14,7 @@ class Nav extends Component {
     let userInLocalStorage = localStorage.getItem('ActiveUser');
     let userInSessionStorage = sessionStorage.getItem('ActiveUser');
     if (userInLocalStorage || userInSessionStorage) {
-      this.props.setProps();
+      this.props.setProps(true);
     }
   }
 
