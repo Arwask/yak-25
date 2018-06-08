@@ -37,7 +37,7 @@ class PostList extends Component {
         <div className="card-body">
           {this.state.editMode ? (
             <form onSubmit={this.saveEditedPost}>
-              <textarea value={this.state.postText} onChange={this.handleChange} />
+              <textarea value={this.state.postText} onChange={this.handleChange} className="editBox" />
               <button className="btn btn-primary" type="submit">
                 Save
               </button>
@@ -45,7 +45,7 @@ class PostList extends Component {
           ) : (
             <p className="card-text">{this.props.posts.text}</p>
           )}
-          {this.props.currentUser === this.props.posts.userId ? (
+          {this.props.currentUser === this.props.posts.userId && !this.state.editMode ? (
             <div>
               <a className="btn btn-primary" onClick={this.editPost}>
                 Edit

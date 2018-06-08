@@ -14,3 +14,7 @@
 .show {
   visibility: visible;
 }
+
+.editBox {
+  width: 15rem;
+}
