@@ -4,14 +4,18 @@ import './Post.css';
 
 class PostList extends Component {
   state = {
-    postText: this.props.posts.text
+    postText: this.props.posts.text,
+    editMode: false
   };
+
+  unique = 1;
+
   delete = function() {
     this.props.deletePost(this.props.posts.id);
   }.bind(this);
 
-  editPost = function() {
-    this.props.editable();
+  editPost = function(e) {
+    this.setState({ editMode: true });
   }.bind(this);
 
   saveEditedPost = function(e) {
@@ -31,7 +35,7 @@ class PostList extends Component {
           </h5>
         </div>
         <div className="card-body">
-          {this.props.editMode ? (
+          {this.state.editMode ? (
             <form onSubmit={this.saveEditedPost}>
               <textarea value={this.state.postText} onChange={this.handleChange} />
               <button type="submit">Save</button>

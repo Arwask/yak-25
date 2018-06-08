@@ -135,7 +135,6 @@ class Posts extends Component {
               key={this.unique++}
               editable={this.setEditMode}
               posts={p}
-              editMode={this.state.editMode}
               dispalyText={this.dispalyText}
               editPost={this.editPost}
               currentUser={this.state.currentUser}
