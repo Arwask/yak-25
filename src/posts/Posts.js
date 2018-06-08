@@ -85,6 +85,7 @@ class Posts extends Component {
     })
       .then(r => r.json())
       .then(newPost => {
+        this.setState({ editMode: false });
         this.props.getAllPosts();
         this.setState({ postText: '' });
       });
