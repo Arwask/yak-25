@@ -14,16 +14,17 @@ class Dashboard extends Component {
       email: '',
       password: '',
       rememberMe: false,
-      error: ''
+      error: '',
+      posts: []
     };
   }
   componentDidMount() {
-    console.log(this.props);
     let userInLocalStorage = localStorage.getItem('ActiveUser');
     let userInSessionStorage = sessionStorage.getItem('ActiveUser');
     if (userInLocalStorage || userInSessionStorage) {
       this.props.setProps(true);
     }
+    this.getAllPosts();
   }
   loginHandler = function() {
     this.props.setProps(true);
@@ -39,6 +40,45 @@ class Dashboard extends Component {
 
   handleRememberChange = function(e) {
     this.setState({ rememberMe: e.target.checked });
+  }.bind(this);
+
+  deletePostFromDb = function(id) {
+    fetch(`http://localhost:8088/posts/${id}`, {
+      method: 'DELETE'
+    }).then(data => {
+      this.getAllPosts();
+    });
+  };
+
+  getAllPosts = function() {
+    let allposts = [];
+    let userId = +sessionStorage.getItem('ActiveUser') || +localStorage.getItem('ActiveUser');
+    fetch(
+      `http://localhost:8088/posts?recipientId_like=null&recipientId_like=${userId}&_expand=user&_sort=timestamp&_order=desc`
+    )
+      //public posts and private posts for user
+      .then(r => r.json())
+      .then(data => {
+        data.map(d => {
+          return allposts.push(d);
+        });
+        fetch(
+          `http://localhost:8088/posts?userId=${userId}&recipientId_ne=null&_expand=user&_sort=timestamp&_order=desc`
+        ) //posts by user
+          .then(r => r.json())
+          .then(data => {
+            data.map(d => {
+              return allposts.push(d);
+            });
+            function compare(a, b) {
+              if (a.timestamp > b.timestamp) return -1;
+              if (a.timestamp < b.timestamp) return 1;
+              return 0;
+            }
+            allposts.sort(compare);
+            this.setState({ posts: allposts });
+          });
+      });
   }.bind(this);
 
   handleSubmit = function(e) {
@@ -65,7 +105,7 @@ class Dashboard extends Component {
         <h1>Welcome to Yak!</h1>
         {this.props.loggedIn ? (
           <div>
-            <Posts />
+            <Posts deletePostFromDb={this.deletePostFromDb} posts={this.state.posts} getAllPosts={this.getAllPosts} />
           </div>
         ) : (
           <div className="container">
@@ -99,7 +139,7 @@ class Dashboard extends Component {
                 >
                   Register New Account
                 </button>
-                <RegisterForm loginHandler={this.loginHandler} />
+                <RegisterForm />
               </div>
             </div>
           </div>
