@@ -38,7 +38,9 @@ class PostList extends Component {
           {this.state.editMode ? (
             <form onSubmit={this.saveEditedPost}>
               <textarea value={this.state.postText} onChange={this.handleChange} />
-              <button type="submit">Save</button>
+              <button className="btn btn-primary" type="submit">
+                Save
+              </button>
             </form>
           ) : (
             <p className="card-text">{this.props.posts.text}</p>
