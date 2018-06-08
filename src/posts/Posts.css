@@ -6,3 +6,11 @@
 .textareaDiv textarea {
   margin-bottom: 10px;
 }
+
+.hide {
+  display: none;
+}
+
+.show {
+  visibility: visible;
+}

@@ -10,7 +10,8 @@ class Posts extends Component {
     friendsName: [],
     selectedFriend: 'null',
     posts: [],
-    currentUser: null
+    currentUser: null,
+    editMode: false
   };
   unique = 1;
   componentDidMount() {
@@ -73,6 +74,26 @@ class Posts extends Component {
       });
   }.bind(this);
 
+  editPost = function(event, text, id) {
+    event.preventDefault();
+    fetch(`http://localhost:8088/posts/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ text: text })
+    })
+      .then(r => r.json())
+      .then(newPost => {
+        this.props.getAllPosts();
+        this.setState({ postText: '' });
+      });
+  }.bind(this);
+
+  setEditMode = function(e) {
+    this.setState({ editMode: true });
+  }.bind(this);
+
   handleChange = function(e) {
     this.setState({ postText: e.target.value });
   }.bind(this);
@@ -109,7 +130,16 @@ class Posts extends Component {
         </form>
         {this.props.posts.map(p => {
           return (
-            <PostList key={this.unique++} posts={p} currentUser={this.state.currentUser} deletePost={this.deletePost} />
+            <PostList
+              key={this.unique++}
+              editable={this.setEditMode}
+              posts={p}
+              editMode={this.state.editMode}
+              dispalyText={this.dispalyText}
+              editPost={this.editPost}
+              currentUser={this.state.currentUser}
+              deletePost={this.deletePost}
+            />
           );
         })}
       </div>
