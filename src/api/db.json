@@ -141,7 +141,7 @@
       "text": "Lorem ipsum dolor amet artisan retro squid air plant coloring book hashtag occupy ramps organic palo santo irony. Tattooed crucifix health goth, keffiyeh pickled listicle pop-up hella af woke prism intelligentsia vexillologist readymade. Gochujang austin synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
       "timestamp": 1527711021554,
       "userId": 2,
-      "recipientId": null
+      "recipientId": "null"
     },
     {
       "id": 2,
@@ -155,7 +155,7 @@
       "text": "Tattooed crucifix health goth, keffiyeh pickled listicle pop-up hella af woke prism intelligentsia vexillologist readymade. Gochujang austin synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
       "timestamp": 1527711021559,
       "userId": 4,
-      "recipientId": null
+      "recipientId": "null"
     },
     {
       "id": 4,
@@ -169,28 +169,7 @@
       "text": "Tattooed  synth pour-over single-origin coffee paleo street art knausgaard twee cronut vape.",
       "timestamp": 1527711021551,
       "userId": 2,
-      "recipientId": null
-    },
-    {
-      "text": "Let's see what is on your mind.",
-      "timestamp": 1528312348688,
-      "userId": "1",
-      "recipientId": null,
-      "id": 6
-    },
-    {
-      "text": "Did it work????",
-      "timestamp": 1528312403085,
-      "userId": 1,
-      "recipientId": null,
-      "id": 7
-    },
-    {
-      "text": "kfmwelkfdmw",
-      "timestamp": 1528318807574,
-      "userId": 1,
-      "recipientId": null,
-      "id": 8
+      "recipientId": "null"
     },
     {
       "text": "Hello There!",
@@ -228,11 +207,130 @@
       "id": 13
     },
     {
-      "text": "Hope this is public!",
-      "timestamp": 1528389210047,
+      "text": "What if I don't select anything?",
+      "timestamp": 1528389469299,
       "userId": 1,
-      "recipientId": null,
-      "id": 14
+      "recipientId": 0,
+      "id": 15
+    },
+    {
+      "text": "Doews this work?\n",
+      "timestamp": 1528389712983,
+      "userId": 1,
+      "recipientId": 0,
+      "id": 16
+    },
+    {
+      "text": "Here?",
+      "timestamp": 1528389897272,
+      "userId": 1,
+      "recipientId": 0,
+      "id": 17
+    },
+    {
+      "text": "Trial",
+      "timestamp": 1528390014243,
+      "userId": 1,
+      "recipientId": 0,
+      "id": 18
+    },
+    {
+      "text": "Hi Kimmy!",
+      "timestamp": 1528394206551,
+      "userId": 1,
+      "recipientId": 2,
+      "id": 26
+    },
+    {
+      "text": "How are you?",
+      "timestamp": 1528394253571,
+      "userId": 1,
+      "recipientId": 2,
+      "id": 27
+    },
+    {
+      "text": "Hi Meg",
+      "timestamp": 1528394296533,
+      "userId": 1,
+      "recipientId": 2,
+      "id": 28
+    },
+    {
+      "text": "Hi Newwww",
+      "timestamp": 1528402741884,
+      "userId": 1,
+      "recipientId": "null",
+      "id": 29
+    },
+    {
+      "text": "Trial 2",
+      "timestamp": 1528403572865,
+      "userId": 1,
+      "recipientId": 2,
+      "id": 33
+    },
+    {
+      "text": "Hello there",
+      "timestamp": 1528404272698,
+      "userId": 1,
+      "recipientId": "null",
+      "id": 34
+    },
+    {
+      "text": "Okay hi",
+      "timestamp": 1528404343466,
+      "userId": 1,
+      "recipientId": "null",
+      "id": 35
+    },
+    {
+      "text": "This is the latest",
+      "timestamp": 1528404433603,
+      "userId": 1,
+      "recipientId": "null",
+      "id": 36
+    },
+    {
+      "text": "Hi Kimmy",
+      "timestamp": 1528404446656,
+      "userId": 1,
+      "recipientId": 2,
+      "id": 37
+    },
+    {
+      "text": "where will this g?\n",
+      "timestamp": 1528467675501,
+      "userId": 1,
+      "recipientId": 4,
+      "id": 39
+    },
+    {
+      "text": "Hope this is gone...",
+      "timestamp": 1528469443479,
+      "userId": 1,
+      "recipientId": "null",
+      "id": 40
+    },
+    {
+      "text": "dskjfjaldfa;lf",
+      "timestamp": 1528469532598,
+      "userId": 1,
+      "recipientId": "null",
+      "id": 41
+    },
+    {
+      "text": "lksejgse;gkjes;gj",
+      "timestamp": 1528470018580,
+      "userId": 1,
+      "recipientId": "null",
+      "id": 42
+    },
+    {
+      "text": "Thekedjj",
+      "timestamp": 1528470076074,
+      "userId": 1,
+      "recipientId": "null",
+      "id": 43
     }
   ],
   "liked_posts": [
