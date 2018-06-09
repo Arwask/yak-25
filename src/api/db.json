@@ -256,27 +256,6 @@
       "id": 28
     },
     {
-      "text": "Hi Newwww",
-      "timestamp": 1528402741884,
-      "userId": 1,
-      "recipientId": "null",
-      "id": 29
-    },
-    {
-      "text": "Trial 2",
-      "timestamp": 1528403572865,
-      "userId": 1,
-      "recipientId": 2,
-      "id": 33
-    },
-    {
-      "text": "Hello there",
-      "timestamp": 1528404272698,
-      "userId": 1,
-      "recipientId": "null",
-      "id": 34
-    },
-    {
       "text": "Okay hi",
       "timestamp": 1528404343466,
       "userId": 1,
@@ -289,13 +268,6 @@
       "userId": 1,
       "recipientId": "null",
       "id": 36
-    },
-    {
-      "text": "Hi Kimmy",
-      "timestamp": 1528404446656,
-      "userId": 1,
-      "recipientId": 2,
-      "id": 37
     },
     {
       "text": "where will this g?\n",
@@ -324,6 +296,27 @@
       "userId": 1,
       "recipientId": "null",
       "id": 42
+    },
+    {
+      "text": "Hi Kimmy...Arwa here",
+      "timestamp": 1528489229937,
+      "userId": 1,
+      "recipientId": 2,
+      "id": 43
+    },
+    {
+      "text": "Hey Arwa",
+      "timestamp": 1528489303796,
+      "userId": 2,
+      "recipientId": 1,
+      "id": 44
+    },
+    {
+      "text": "Public declaration",
+      "timestamp": 1528491618594,
+      "userId": 1,
+      "recipientId": "null",
+      "id": 45
     }
   ],
   "liked_posts": [

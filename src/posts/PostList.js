@@ -32,6 +32,9 @@ class PostList extends Component {
         <div className="card-header">
           <h5 className="card-title">
             {this.props.posts.user.firstName} {this.props.posts.user.lastName}
+            <span className="badge badge-secondary float-right">
+              {this.props.posts.recipientId === 'null' ? 'public' : 'private'}
+            </span>
           </h5>
         </div>
         <div className="card-body">
@@ -39,7 +42,7 @@ class PostList extends Component {
             <form onSubmit={this.saveEditedPost}>
               <textarea value={this.state.postText} onChange={this.handleChange} className="editBox" />
               <button className="btn btn-primary" type="submit">
-                Save
+                Update
               </button>
             </form>
           ) : (
