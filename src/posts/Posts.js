@@ -15,10 +15,13 @@ class Posts extends Component {
   };
   unique = 1;
   componentDidMount() {
+    this.getMyFriends();
+  }
+
+  getMyFriends = function() {
     let nameList = [];
     let id = +sessionStorage.getItem('ActiveUser') || +localStorage.getItem('ActiveUser');
     this.setState({ currentUser: id });
-
     fetch(`http://localhost:8088/friends?user1Id=${id}&accepted=true`)
       .then(r => r.json())
       .then(friendsList => {
@@ -39,7 +42,7 @@ class Posts extends Component {
               });
           });
       });
-  }
+  };
 
   selectedFriend = function(id) {
     this.setState({ selectedFriend: id });
@@ -125,7 +128,7 @@ class Posts extends Component {
           </div>
           <div>
             <button className="btn btn-primary" type="submit">
-              Post
+              Publish
             </button>
           </div>
         </form>
