@@ -6,6 +6,7 @@ import 'bootstrap';
 import './Dashboard.css';
 import Login from './login/Login';
 import Posts from '../posts/Posts';
+import Search from '../search/Search';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -23,8 +24,8 @@ class Dashboard extends Component {
     let userInSessionStorage = sessionStorage.getItem('ActiveUser');
     if (userInLocalStorage || userInSessionStorage) {
       this.props.setProps(true);
+      this.getAllPosts();
     }
-    this.getAllPosts();
   }
   loginHandler = function() {
     this.props.setProps(true);
@@ -105,7 +106,11 @@ class Dashboard extends Component {
         <h1>Welcome to Yak!</h1>
         {this.props.loggedIn ? (
           <div>
-            <Posts deletePostFromDb={this.deletePostFromDb} posts={this.state.posts} getAllPosts={this.getAllPosts} />
+            {this.props.search ? (
+              <Search foundItems={this.props.foundItems} />
+            ) : (
+              <Posts deletePostFromDb={this.deletePostFromDb} posts={this.state.posts} getAllPosts={this.getAllPosts} />
+            )}
           </div>
         ) : (
           <div className="container">

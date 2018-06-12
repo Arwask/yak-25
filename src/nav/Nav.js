@@ -7,7 +7,10 @@ import './Nav.css';
 class Nav extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      searchTerm: '',
+      searchRoute: '/'
+    };
   }
 
   componentDidMount() {
@@ -17,6 +20,19 @@ class Nav extends Component {
       this.props.setProps(true);
     }
   }
+
+  search = function(e) {
+    if (e.charCode === 13) {
+      this.props.searchHandler(this.state.searchTerm);
+      this.setState({
+        searchTerm: ''
+      });
+    }
+  }.bind(this);
+
+  handleFieldChange = function(e) {
+    this.setState({ searchTerm: e.target.value });
+  }.bind(this);
 
   logMeOut = function() {
     this.props.logOut();
@@ -38,12 +54,16 @@ class Nav extends Component {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <div
+            className="collapse
+           navbar-collapse"
+            id="navbarNavDropdown"
+          >
             {this.props.loggedIn ? (
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <Link className="nav-link" to="/">
-                    Logo
+                    <button>Logo</button>
                   </Link>
                 </li>
                 <li className="nav-item ">
@@ -58,10 +78,10 @@ class Nav extends Component {
                       type="search"
                       placeholder="Search friends, posts, etc.."
                       aria-label="Search"
+                      onKeyPress={this.search}
+                      onChange={this.handleFieldChange}
+                      value={this.state.searchTerm}
                     />
-                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                      Search
-                    </button>
                   </form>
                 </li>
                 <li>

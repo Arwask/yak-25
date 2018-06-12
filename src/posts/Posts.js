@@ -142,6 +142,7 @@ class Posts extends Component {
               editPost={this.editPost}
               currentUser={this.state.currentUser}
               deletePost={this.deletePost}
+              friendsName={this.state.friendsName}
             />
           );
         })}
