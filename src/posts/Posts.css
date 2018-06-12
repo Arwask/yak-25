@@ -1,0 +1,20 @@
+.textareaDiv {
+  width: 50%;
+  margin: auto;
+}
+
+.textareaDiv textarea {
+  margin-bottom: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  visibility: visible;
+}
+
+.editBox {
+  width: 15rem;
+}

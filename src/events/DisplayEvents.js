@@ -8,7 +8,7 @@ export default class DisplayEvents extends Component {
         events: []
     }
 
-    activeUser = sessionStorage.getItem("userId")
+    activeUser = sessionStorage.getItem("ActiveUser")
 
     postNewEvent = (text) => fetch("http://localhost:8088/events", {
         method: "POST",
@@ -35,7 +35,6 @@ export default class DisplayEvents extends Component {
                 location: ""
             })
             alert("Event Created!")
-            this.DisplayAllEvents()
         })
 
     // TO DO: clear fields and alert that event created successfully 
@@ -46,34 +45,14 @@ export default class DisplayEvents extends Component {
         this.setState(stateToChange)
     }
 
-    DisplayAllEvents = function() {
-
+    componentDidMount() {
         let listOfEvents = []
-        let d = new Date().toDateString("YYYY-MM-DD")
-        // let month = d.getMonth()
-        // let day = d.getDate()
-        // let year = d.getFullYear()
-        // let today = `${year}-${month}-${day}`
-        // let sevenDays = d.getDate()+7
-
-        console.log(d);
-        
-        // console.log(today);
-        // console.log(sevenDays);
-        
-    
-        fetch(`http://localhost:8088/events?_sort=date&_order=asc&date_gte=${today}&date_lte=${sevenDays}&_expand=user`)
+        fetch("http://localhost:8088/events?_expand=user")
             .then(r => r.json())
             .then(event => {
-                event.forEach(currentEvent =>
-                    listOfEvents.push(currentEvent))
+                event.forEach(currentEvent => listOfEvents.push(currentEvent))
                 this.setState({ events: listOfEvents })
-                
             })
-        }
-
-    componentDidMount() {
-        this.DisplayAllEvents()
     }
 
     render() {
@@ -92,20 +71,23 @@ export default class DisplayEvents extends Component {
                                                 onChange={this.handleFieldChange}
                                                 className="form-control"
                                                 rows="4"></input>
+                                            <p>Event Date</p>
                                             <input id="date"
                                                 type="date"
                                                 value={this.state.date}
                                                 onChange={this.handleFieldChange}
                                                 className="form-control"
                                                 rows="4"></input>
+                                            <p>Start Time</p>
                                             <input id="start_date"
-                                                placeholder="Start Time"
+                                                type="time"
                                                 value={this.state.start_date}
                                                 onChange={this.handleFieldChange}
                                                 className="form-control"
                                                 rows="4"></input>
+                                            <p>End Time</p>
                                             <input id="end_date"
-                                                placeholder="End Time"
+                                                type="time"
                                                 value={this.state.end_date}
                                                 onChange={this.handleFieldChange}
                                                 className="form-control"

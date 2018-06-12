@@ -11,10 +11,10 @@ class Nav extends Component {
   }
 
   componentDidMount() {
-    let userInLocalStorage = localStorage.getItem('userId');
-    let userInSessionStorage = sessionStorage.getItem('userId');
+    let userInLocalStorage = localStorage.getItem('ActiveUser');
+    let userInSessionStorage = sessionStorage.getItem('ActiveUser');
     if (userInLocalStorage || userInSessionStorage) {
-      this.props.setProps();
+      this.props.setProps(true);
     }
   }
 
