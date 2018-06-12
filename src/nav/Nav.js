@@ -80,7 +80,7 @@ class Nav extends Component {
               <ul className="nav-bar nav">
                 <li className="nav-item">
                   <Link className="nav-link" to="/">
-                    Logo
+                    Yak
                   </Link>
                 </li>
               </ul>

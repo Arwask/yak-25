@@ -7,7 +7,9 @@ import './Dashboard.css';
 import Login from './login/Login';
 import Posts from '../posts/Posts';
 
-class Dashboard extends Component {
+import DisplayEvents from '../events/DisplayEvents'
+
+export default class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,23 +28,24 @@ class Dashboard extends Component {
     }
     this.getAllPosts();
   }
-  loginHandler = function() {
+
+  loginHandler = function () {
     this.props.setProps(true);
   }.bind(this);
 
-  handleEmailChange = function(e) {
+  handleEmailChange = function (e) {
     this.setState({ email: e.target.value });
   }.bind(this);
 
-  handlePasswordChange = function(e) {
+  handlePasswordChange = function (e) {
     this.setState({ password: e.target.value });
   }.bind(this);
 
-  handleRememberChange = function(e) {
+  handleRememberChange = function (e) {
     this.setState({ rememberMe: e.target.checked });
   }.bind(this);
 
-  deletePostFromDb = function(id) {
+  deletePostFromDb = function (id) {
     fetch(`http://localhost:8088/posts/${id}`, {
       method: 'DELETE'
     }).then(data => {
@@ -50,7 +53,7 @@ class Dashboard extends Component {
     });
   };
 
-  getAllPosts = function() {
+  getAllPosts = function () {
     let allposts = [];
     let userId = +sessionStorage.getItem('ActiveUser') || +localStorage.getItem('ActiveUser');
     fetch(
@@ -81,7 +84,7 @@ class Dashboard extends Component {
       });
   }.bind(this);
 
-  handleSubmit = function(e) {
+  handleSubmit = function (e) {
     e.preventDefault();
     console.log('Submit called');
     fetch(`http://localhost:8088/users?email=${this.state.email}&password=${this.state.password}`)
@@ -102,51 +105,50 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to Yak!</h1>
         {this.props.loggedIn ? (
           <div>
+            <DisplayEvents />
             <Posts deletePostFromDb={this.deletePostFromDb} posts={this.state.posts} getAllPosts={this.getAllPosts} />
           </div>
         ) : (
-          <div className="container">
-            <div className="row">
-              <div className="col-6">
-                <button
-                  type="button"
-                  className="btn btn-primary col-6"
-                  data-toggle="collapse"
-                  aria-controls="login__button"
-                  data-target="#login__button"
-                >
-                  Log In
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-4 col-md-6 col-sm-12">
+                  <button
+                    type="button"
+                    className="btn btn-primary col-lg-4 col-md-6 col-sm-12 dash__btn"
+                    data-toggle="collapse"
+                    aria-controls="login__button"
+                    data-target="#login__button"
+                  >
+                    Log In
                 </button>
-                <Login
-                  handleSubmit={this.handleSubmit}
-                  handleEmailChange={this.handleEmailChange}
-                  handlePasswordChange={this.handlePasswordChange}
-                  handleRememberChange={this.handleRememberChange}
-                  email={this.state.email}
-                  password={this.state.password}
-                  rememberMe={this.state.rememberMe}
-                />
-              </div>
-              <div className="col-6">
-                <button
-                  type="button"
-                  className="btn btn-primary col-6"
-                  data-toggle="collapse"
-                  data-target="#register__button"
-                >
-                  Register New Account
+                  <Login
+                    handleSubmit={this.handleSubmit}
+                    handleEmailChange={this.handleEmailChange}
+                    handlePasswordChange={this.handlePasswordChange}
+                    handleRememberChange={this.handleRememberChange}
+                    email={this.state.email}
+                    password={this.state.password}
+                    rememberMe={this.state.rememberMe}
+                  />
+                </div>
+                <div className="col-6">
+                  <button
+                    type="button"
+                    className="btn btn-primary col-6"
+                    data-toggle="collapse"
+                    data-target="#register__button"
+                  >
+                    Register New Account
                 </button>
-                <RegisterForm />
+                  <RegisterForm loginHandler={this.loginHandler} />
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
     );
   }
 }
 
-export default Dashboard;

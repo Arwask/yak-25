@@ -1,0 +1,25 @@
+h1, h2, h3, h4, h5 {
+    font-family: 'Homemade Apple', cursive;
+    padding: 10px;
+    text-align: center;
+}
+
+.eventsFeed {
+    margin-left: 10px;
+}
+
+.form-control {
+    margin: 5px;
+}
+
+.eventCard {
+    margin: 8px;
+}
+
+.eventBtn {
+    padding: 30px;
+}
+
+.event-header {
+    max-width: 300px;
+}
