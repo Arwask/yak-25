@@ -261,6 +261,13 @@
       "userId": 1,
       "recipientId": "null",
       "id": 45
+    },
+    {
+      "text": "here's a post",
+      "timestamp": 1528831246473,
+      "userId": 2,
+      "recipientId": "null",
+      "id": 46
     }
   ],
   "liked_posts": [
@@ -340,6 +347,22 @@
       "location": "NSS",
       "timestamp": 1528828274390,
       "id": 11
+    },
+    {
+      "userId": 2,
+      "name": "refresh test",
+      "timestamp": 1528832398838,
+      "id": 12
+    },
+    {
+      "userId": 2,
+      "name": "june",
+      "date": "2018-06-19",
+      "start_date": "09:00",
+      "end_date": "11:00",
+      "location": "nashville",
+      "timestamp": 1528848440635,
+      "id": 13
     }
   ],
   "settings": [
