@@ -59,7 +59,7 @@ export default class DisplayEvents extends Component {
         console.log(sevenDaysDate);
         
 
-        fetch(`http://localhost:8088/events?_expand=user&date_lte=${sevenDaysDate}`)
+        fetch(`http://localhost:8088/events?_expand=user&date_lte=${sevenDaysDate}&_sort=date&_order=asc`)
             .then(r => r.json())
             .then(event => {
                 event.forEach(currentEvent => listOfEvents.push(currentEvent))
