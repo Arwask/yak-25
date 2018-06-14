@@ -23,6 +23,7 @@ class Nav extends Component {
 
   search = function(e) {
     if (e.charCode === 13) {
+      e.preventDefault();
       this.props.searchHandler(this.state.searchTerm);
       this.setState({
         searchTerm: ''

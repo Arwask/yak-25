@@ -66,7 +66,7 @@ class App extends Component {
                 loggedIn={this.state.loggedIn}
                 setProps={this.setProps}
                 foundItems={this.state.foundItems}
-                search={this.props.search}
+                search={this.state.search}
               />
             )}
           />
