@@ -13,8 +13,14 @@ class App extends Component {
     loggedIn: false,
     searchTerms: '',
     foundItems: [],
-    search: false
+    search: false,
+    currentUser: null
   };
+
+  componentDidMount() {
+    let id = +sessionStorage.getItem('ActiveUser') || +localStorage.getItem('ActiveUser');
+    this.setState({ currentUser: id });
+  }
 
   logOut = function() {
     if (sessionStorage.getItem('ActiveUser')) sessionStorage.removeItem('ActiveUser');
@@ -57,6 +63,7 @@ class App extends Component {
             loggedIn={this.state.loggedIn}
             setProps={this.setProps}
             searchHandler={this.searchHandler}
+            currentUser={this.state.currentUser}
           />
           <Route
             exact
@@ -67,6 +74,7 @@ class App extends Component {
                 setProps={this.setProps}
                 foundItems={this.state.foundItems}
                 search={this.state.search}
+                currentUser={this.state.currentUser}
               />
             )}
           />

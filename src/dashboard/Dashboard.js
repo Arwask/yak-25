@@ -4,7 +4,7 @@ import RegisterForm from '../register/RegisterForm';
 
 import 'bootstrap';
 import './Dashboard.css';
-import Login from './login/Login';
+import Login from '../login/Login';
 import Posts from '../posts/Posts';
 import Search from '../search/Search';
 
@@ -107,9 +107,14 @@ class Dashboard extends Component {
         {this.props.loggedIn ? (
           <div>
             {this.props.search ? (
-              <Search foundItems={this.props.foundItems} />
+              <Search foundItems={this.props.foundItems} currentUser={this.props.currentUser} />
             ) : (
-              <Posts deletePostFromDb={this.deletePostFromDb} posts={this.state.posts} getAllPosts={this.getAllPosts} />
+              <Posts
+                deletePostFromDb={this.deletePostFromDb}
+                currentUser={this.props.currentUser}
+                posts={this.state.posts}
+                getAllPosts={this.getAllPosts}
+              />
             )}
           </div>
         ) : (

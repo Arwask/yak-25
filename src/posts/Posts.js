@@ -10,7 +10,7 @@ class Posts extends Component {
     friendsName: [],
     selectedFriend: 'null',
     posts: [],
-    currentUser: null,
+    currentUser: this.props.currentUser,
     editMode: false
   };
   unique = 1;
@@ -21,7 +21,6 @@ class Posts extends Component {
   getMyFriends = function() {
     let nameList = [];
     let id = +sessionStorage.getItem('ActiveUser') || +localStorage.getItem('ActiveUser');
-    this.setState({ currentUser: id });
     fetch(`http://localhost:8088/friends?user1Id=${id}&accepted=true`)
       .then(r => r.json())
       .then(friendsList => {

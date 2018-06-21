@@ -1,0 +1,16 @@
+.card-profile {
+  /* background-color: #333; */
+  padding: 10px;
+  border-color: #333;
+}
+
+.img-profile-div {
+  border-radius: 50%;
+}
+
+.img-profile {
+  width: 50px;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 100%;
+}
