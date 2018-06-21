@@ -144,10 +144,10 @@ export default class Dashboard extends Component {
                   rememberMe={this.state.rememberMe}
                 />
               </div>
-              <div className="col-6">
+              <div className="col-lg-4 col-md-6 col-sm-12">
                 <button
                   type="button"
-                  className="btn btn-primary col-6"
+                  className="btn btn-primary col-lg-4 col-md-6 col-sm-12 dash__btn"
                   data-toggle="collapse"
                   data-target="#register__button"
                 >

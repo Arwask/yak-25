@@ -8,8 +8,10 @@ export default class DisplayEvents extends Component {
         events: []
     }
 
+    // get logged in userId
     activeUser = sessionStorage.getItem("ActiveUser")
 
+    // post a new event to api
     postNewEvent = (text) => fetch("http://localhost:8088/events", {
         method: "POST",
         headers: {
@@ -35,24 +37,38 @@ export default class DisplayEvents extends Component {
                 location: ""
             })
             alert("Event Created!")
+            // update list of events with posted event
+            this.displayAllEvents()
         })
 
-    // TO DO: clear fields and alert that event created successfully 
-
+    // track keyup changes on form fields
     handleFieldChange = (evt) => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
 
-    componentDidMount() {
+    // display all events from api
+    displayAllEvents = function () {
         let listOfEvents = []
-        fetch("http://localhost:8088/events?_expand=user")
+        let date = new Date()
+        date.setDate(date.getDate() + 7)
+
+        // gets the date 7 days in the future in the yyyy-mm-dd format to interpolate into the get method
+        let sevenDaysDate = date.getFullYear() + '-' + ('0' + (date.getMonth()+1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2);
+        console.log(sevenDaysDate);
+        
+
+        fetch(`http://localhost:8088/events?_expand=user&date_lte=${sevenDaysDate}&_sort=date&_order=asc`)
             .then(r => r.json())
             .then(event => {
                 event.forEach(currentEvent => listOfEvents.push(currentEvent))
                 this.setState({ events: listOfEvents })
             })
+    }
+
+    componentDidMount() {
+        this.displayAllEvents()
     }
 
     render() {
