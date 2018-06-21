@@ -8,7 +8,9 @@ import Login from '../login/Login';
 import Posts from '../posts/Posts';
 import Search from '../search/Search';
 
-class Dashboard extends Component {
+import DisplayEvents from '../events/DisplayEvents';
+
+export default class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,6 +29,7 @@ class Dashboard extends Component {
       this.getAllPosts();
     }
   }
+
   loginHandler = function() {
     this.props.setProps(true);
   }.bind(this);
@@ -103,7 +106,6 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to Yak!</h1>
         {this.props.loggedIn ? (
           <div>
             {this.props.search ? (
@@ -116,14 +118,16 @@ class Dashboard extends Component {
                 getAllPosts={this.getAllPosts}
               />
             )}
+            <DisplayEvents />
+            <Posts deletePostFromDb={this.deletePostFromDb} posts={this.state.posts} getAllPosts={this.getAllPosts} />
           </div>
         ) : (
           <div className="container">
             <div className="row">
-              <div className="col-6">
+              <div className="col-lg-4 col-md-6 col-sm-12">
                 <button
                   type="button"
-                  className="btn btn-primary col-6"
+                  className="btn btn-primary col-lg-4 col-md-6 col-sm-12 dash__btn"
                   data-toggle="collapse"
                   aria-controls="login__button"
                   data-target="#login__button"
@@ -149,7 +153,7 @@ class Dashboard extends Component {
                 >
                   Register New Account
                 </button>
-                <RegisterForm />
+                <RegisterForm loginHandler={this.loginHandler} />
               </div>
             </div>
           </div>
@@ -158,5 +162,3 @@ class Dashboard extends Component {
     );
   }
 }
-
-export default Dashboard;

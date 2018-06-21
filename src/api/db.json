@@ -39,62 +39,6 @@
       "password": "123abc",
       "rememberMe": true,
       "image": "./img/meg.jpg"
-    },
-    {
-      "firstName": "Kimberly",
-      "lastName": "Bird",
-      "password": "123",
-      "emailAddress": "kimberly.j.bird@gmail.com",
-      "location": "123",
-      "id": 5
-    },
-    {
-      "firstName": "Peter",
-      "lastName": "Bird",
-      "password": "123",
-      "emailAddress": "pbird08@gmail.com",
-      "location": "nashville",
-      "id": 6
-    },
-    {
-      "firstName": "Kimberly",
-      "lastName": "Bird",
-      "password": "123",
-      "emailAddress": "kimberlybird@gmail.com",
-      "location": "Denver",
-      "id": 7
-    },
-    {
-      "firstName": "bob",
-      "lastName": "alice",
-      "password": "a",
-      "emailAddress": "b@a.com",
-      "location": "Atlanta",
-      "id": 8
-    },
-    {
-      "firstName": "Lola",
-      "lastName": "Pola",
-      "password": "a",
-      "emailAddress": "a@p.com",
-      "location": "houston",
-      "id": 9
-    },
-    {
-      "firstName": "Lola",
-      "lastName": "Pola",
-      "password": "a",
-      "emailAddress": "a@p.com",
-      "location": "xyz",
-      "id": 10
-    },
-    {
-      "firstName": "kjzchZMNZ",
-      "lastName": ",MDVND",
-      "password": "djh",
-      "emailAddress": "a@cc.com",
-      "location": "nsjk",
-      "id": 11
     }
   ],
   "friends": [
@@ -317,22 +261,64 @@
   ],
   "events": [
     {
-      "id": 1,
-      "userId": 3,
-      "name": "Pizza night",
-      "start_date": 1527711426481,
-      "end_date": 1527711476481,
-      "location": "NSS",
-      "timestamp": 1527711021551
+      "userId": 2,
+      "name": "Pizza Night",
+      "date": "2018-06-08",
+      "start_date": "3pm",
+      "end_date": "6pm",
+      "location": "nashville",
+      "timestamp": 1528226150160,
+      "id": 6
     },
     {
-      "id": 2,
-      "userId": 2,
-      "name": "Movie night",
-      "start_date": 1527714426461,
-      "end_date": 1527711496481,
+      "userId": 1,
+      "name": "Movie Night",
+      "date": "2018-06-16",
+      "start_date": "4pm",
+      "end_date": "6pm",
+      "location": "nashville",
+      "timestamp": 1528245514874,
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "name": "modal testing",
+      "date": "2018-06-15",
+      "start_date": "3pm",
+      "end_date": "7pm",
+      "location": "Denver",
+      "timestamp": 1528245998839,
+      "id": 8
+    },
+    {
+      "userId": 4,
+      "name": "Code Camp",
+      "date": "2018-06-19",
+      "start_date": "10am",
+      "end_date": "5pm",
       "location": "NSS",
-      "timestamp": 1527711027551
+      "timestamp": 1528383923102,
+      "id": 9
+    },
+    {
+      "userId": 2,
+      "name": "Kimmy's Event",
+      "date": "2018-06-19",
+      "start_date": "3pm",
+      "end_date": "8pm",
+      "location": "East Nashville",
+      "timestamp": 1528399358043,
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "name": "more testing never ends",
+      "date": "2018-06-22",
+      "start_date": "14:00",
+      "end_date": "15:00",
+      "location": "NSS",
+      "timestamp": 1528828274390,
+      "id": 11
     }
   ],
   "settings": [
